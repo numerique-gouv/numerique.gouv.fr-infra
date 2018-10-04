@@ -1,5 +1,14 @@
 # numerique.gouv.fr-infra
 
+## Ansible
+
+Pour la configuration du serveur,  nous avons utilisé les rôles ansible suivants:
+
+* ansible-role-certbot
+* ansible-role-htpasswd
+* ansible-role-nginx
+
+
 ## Le fichier host
 
 Ansible fonctionne à partir d'un système [d'inventaire](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html) 
