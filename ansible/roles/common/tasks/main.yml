@@ -1,0 +1,12 @@
+---
+- name: add authorized keys for root
+  authorized_key:
+    user: root
+    key: "{{ item.public_key }}"
+  with_items:
+    - "{{ authorized_keys }}"
+
+- name: install the latest version of rsync
+  apt:
+    name: rsync
+    state: latest
