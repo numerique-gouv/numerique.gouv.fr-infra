@@ -6,15 +6,6 @@ authorized_keys:
   - user: LUM-key
     public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCkU8CyvmUoDvYdVuZpudo8/mnzP02BT8ADNEWpi1Kif0b6cgpk17u40G2kWTYoibOXhPMb5kNA71VMJTEjXtSziSpdXsev0DdKHcJq02shWj8D0+qXf6GL9tfjhr7vkpTQqQD5pnonia114kp3u4H2c02n1afLiMPGy+Zhphv0RCDE99jmqkIRPf5otFTVDEP1SqjRQo7mIoSKaKEv4f8Fak6N3gS7ZRrUNnQsXwFnWOVUF7XRmplmKtRSt3MKbJ8X2P21Vc1b3tN7FexygKCg39168G6M07w5i/h9EFwYTHz05WDoInk8qz03VJ4smJYrMpxLPWyfFnp785ud1JPn lucien@MacBook-Pro-de-Lucien.localssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCeRP6nqjIXVua+yJznjEKnuu6oQ5B5lOoatMKFtmvIkNz8VcOrNt4WtrIF5kgEt3dg5fV/vEIHztmHISiD9sBeJHUcOX2Z7R+bpLxHIVMFY4LSg27fTWIZbDEcl7IQBe/pfFER6B2IZt4cMlRXiN63JWmnSNbPjIyc17L6NmFTQ9FMZNJvXUDXROANTI1ZMJTft0aNFdtS1JWEZ09Aw1LQDrsrIa3ZTtfUJjc6F8bDHICZr8COEpsdd/qFuD6d64ejVwUQBIikjZCIUEAsGRh08ezPnrFql33Cy/w9FyunO6my6ym9JA0vNi0FCmzkzmkJA3Cf4cozTmjdtb1v1/PTmQl9cgnJc9g97SfG1ih2OqojiD/7RwwtdGPzW5CUZg0BBS0GBpPgm5I7i5hgZxDlBc5KSTbjP/wfhVAFD73zmEPhDtNtJbpALRVc4RdCOG3iK9ZDm94fJFz+PRlKU+5CtzasfjDulTCvPUZNUFNvIbkSI/9OzZDEqkW7vfEDcMB6qqfkF6Ni2RtVkDRKVwqtHNdC3XcM+zbtUPtvFW874iVb6MZieuFUnevzxVZjjSBPRaTsrkDVDjhJXNk8sxi0KMVFNOv+mcaYbACbHacPlBLjNOJsvVB6DolfJUyGRqubdneWWabmD6XVtH/uyKJKT3/TLPc3pNiYxHlMC/x9HQ== lucien@MacBook-Pro-de-Lucien.local
 
-htpasswd_credentials:
-  - path: /etc/nginx/passwdfile
-    name: "{{ htpasswd_user }}"
-    password: "{{ htpasswd_password }}"
-    owner: root
-    group: www-data
-    mode: 'u+rw,g+r'
-
-
 #Nginx conf
 nginx_user: "www-data"
 nginx_remove_default_vhost: True
@@ -31,10 +22,6 @@ nginx_vhosts:
     error_page: "404 /404/index.html"
     filename: "dinsic.conf"
     extra_parameters: |
-      location / {
-          auth_basic           "Nginx with basic auth.";
-          auth_basic_user_file /etc/nginx/passwdfile;
-          }
       ssl_certificate     /etc/letsencrypt/live/{{ inventory_hostname }}/fullchain.pem;
       ssl_certificate_key /etc/letsencrypt/live/{{ inventory_hostname }}/privkey.pem;
       ssl_protocols       TLSv1.2;
