@@ -1,5 +1,5 @@
 ---
-- hosts: dev
+- hosts: preprod
   remote_user: root
   vars_files:
       - vars/main.yml
@@ -29,4 +29,3 @@
         status_code: 200
       delegate_to: localhost
       become: no
-

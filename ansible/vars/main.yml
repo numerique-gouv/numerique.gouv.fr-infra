@@ -39,7 +39,19 @@ nginx_vhosts:
       ssl_certificate_key /etc/letsencrypt/live/{{ inventory_hostname }}/privkey.pem;
       ssl_protocols       TLSv1.2;
       ssl_ciphers         HIGH:!aNULL:!MD5;
-
+      rewrite ^/economie-numerique/(.*)$ https://secretariat-etat.numerique.gouv.fr/economie-numerique/$1 permanent;
+      rewrite ^/transformation-numerique-de-letat/(.*)$ https://secretariat-etat.numerique.gouv.fr/transformation-numerique-de-letat/$1 permanent;
+      rewrite ^/confiance-numerique/(.*)$ https://secretariat-etat.numerique.gouv.fr/confiance-numerique/$1 permanent;
+      rewrite ^/numerique-inclusif/(.*)$ https://secretariat-etat.numerique.gouv.fr/numerique-inclusif/$1 permanent;
+      rewrite ^/europe-et-international/(.*)$ https://secretariat-etat.numerique.gouv.fr/europe-et-international/$1 permanent;
+      rewrite ^/le-secretariat-d-etat/(.*)$ https://secretariat-etat.numerique.gouv.fr/le-secretariat-d-etat/$1 permanent;
+      rewrite ^/presse/(.*)$ https://secretariat-etat.numerique.gouv.fr/presse/$1 permanent;
+      rewrite ^/agenda$ https://secretariat-etat.numerique.gouv.fr/agenda/ permanent;
+      rewrite /actions-startups/(.*)$ https://secretariat-etat.numerique.gouv.fr/actions-startups/$1 permanent;
+      rewrite /^rapport-renforcer-lutte-racisme-antisemitisme-internet$ https://secretariat-etat.numerique.gouv.fr/rapport-renforcer-lutte-racisme-antisemitisme-internet permanent;
+      rewrite /^etats-generaux-numerique-ouverture-forum-contributif$ https://secretariat-etat.numerique.gouv.fr/etats-generaux-numerique-ouverture-forum-contributif permanent;
+      rewrite /^mounir-mahjoubi-rencontre-acteurs-indonesiens-secteur-numerique$ https://secretariat-etat.numerique.gouv.fr/mounir-mahjoubi-rencontre-acteurs-indonesiens-secteur-numerique permanent;
+      rewrite /^presentation-plan-national-numerique-inclusif-lancement-numerique-communs$ https://secretariat-etat.numerique.gouv.fr/presentation-plan-national-numerique-inclusif-lancement-numerique-communs permanent;
 
 #Certbot
 certbot_auto_renew_user: root
@@ -51,6 +63,3 @@ certbot_create_standalone_stop_services: []
 certbot_certs:
   - domains:
       - "{{ inventory_hostname }}"
-
-
-
