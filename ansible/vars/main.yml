@@ -49,13 +49,11 @@ nginx_vhosts:
       rewrite ^/actions-startups/(.*)$ https://secretariat-etat.numerique.gouv.fr/actions-startups/$1 permanent;
       # pages
       rewrite ^/le-secretaire-d-etat$ https://secretariat-etat.numerique.gouv.fr/le-secretaire-d-etat/ permanent;
-      rewrite ^/agenda$ https://secretariat-etat.numerique.gouv.fr/agenda/ permanent;
       rewrite ^/rapport-renforcer-lutte-racisme-antisemitisme-internet$ https://secretariat-etat.numerique.gouv.fr/rapport-renforcer-lutte-racisme-antisemitisme-internet permanent;
       rewrite ^/etats-generaux-numerique-ouverture-forum-contributif$ https://secretariat-etat.numerique.gouv.fr/etats-generaux-numerique-ouverture-forum-contributif permanent;
       rewrite ^/mounir-mahjoubi-rencontre-acteurs-indonesiens-secteur-numerique$ https://secretariat-etat.numerique.gouv.fr/mounir-mahjoubi-rencontre-acteurs-indonesiens-secteur-numerique permanent;
       rewrite ^/presentation-plan-national-numerique-inclusif-lancement-numerique-communs$ https://secretariat-etat.numerique.gouv.fr/presentation-plan-national-numerique-inclusif-lancement-numerique-communs permanent;
       rewrite ^/actions-startups$ https://secretariat-etat.numerique.gouv.fr/actions-startups permanent;
-
 
 #Certbot
 certbot_auto_renew_user: root
