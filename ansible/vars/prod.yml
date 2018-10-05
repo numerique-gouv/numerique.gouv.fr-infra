@@ -40,13 +40,13 @@ nginx_vhosts:
       ssl_protocols       TLSv1.2;
       ssl_ciphers         HIGH:!aNULL:!MD5;
       # routes
-      rewrite ^/economie-numerique/(.*)$ https://secretariat-etat.numerique.gouv.fr/economie-numerique/$1 permanent;
-      rewrite ^/transformation-numerique-de-letat/(.*)$ https://secretariat-etat.numerique.gouv.fr/transformation-numerique-de-letat/$1 permanent;
-      rewrite ^/confiance-numerique/(.*)$ https://secretariat-etat.numerique.gouv.fr/confiance-numerique/$1 permanent;
-      rewrite ^/numerique-inclusif/(.*)$ https://secretariat-etat.numerique.gouv.fr/numerique-inclusif/$1 permanent;
-      rewrite ^/europe-et-international/(.*)$ https://secretariat-etat.numerique.gouv.fr/europe-et-international/$1 permanent;
-      rewrite ^/presse/(.*)$ https://secretariat-etat.numerique.gouv.fr/presse/$1 permanent;
-      rewrite ^/actions-startups/(.*)$ https://secretariat-etat.numerique.gouv.fr/actions-startups/$1 permanent;
+      rewrite ^/economie-numerique(.*)$ https://secretariat-etat.numerique.gouv.fr/economie-numerique$1 permanent;
+      rewrite ^/transformation-numerique-de-letat(.*)$ https://secretariat-etat.numerique.gouv.fr/transformation-numerique-de-letat$1 permanent;
+      rewrite ^/confiance-numerique(.*)$ https://secretariat-etat.numerique.gouv.fr/confiance-numerique$1 permanent;
+      rewrite ^/numerique-inclusif(.*)$ https://secretariat-etat.numerique.gouv.fr/numerique-inclusif$1 permanent;
+      rewrite ^/europe-et-international(.*)$ https://secretariat-etat.numerique.gouv.fr/europe-et-international$1 permanent;
+      rewrite ^/presse(.*)$ https://secretariat-etat.numerique.gouv.fr/presse$1 permanent;
+      rewrite ^/actions-startups(.*)$ https://secretariat-etat.numerique.gouv.fr/actions-startups$1 permanent;
       # pages
       rewrite ^/le-secretaire-d-etat$ https://secretariat-etat.numerique.gouv.fr/le-secretaire-d-etat/ permanent;
       rewrite ^/agenda$ https://secretariat-etat.numerique.gouv.fr/agenda/ permanent;
