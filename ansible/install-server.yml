@@ -22,6 +22,7 @@
   tasks:
     - name: Flush handlers in case any configs have changed.
       meta: flush_handlers
+    - shell: echo 'GITHUB_ACCESS_TOKEN={{ lookup("env", "GITHUB_ACCESS_TOKEN") }}' >> /etc/environment
 
     - name: Test secure connection to SSL domain.
       uri:
