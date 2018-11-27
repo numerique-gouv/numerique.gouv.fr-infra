@@ -55,7 +55,6 @@ nginx_vhosts:
       rewrite ^/presentation-plan-national-numerique-inclusif-lancement-numerique-communs$ https://secretariat-etat.numerique.gouv.fr/presentation-plan-national-numerique-inclusif-lancement-numerique-communs permanent;
       rewrite ^/actions-startups$ https://secretariat-etat.numerique.gouv.fr/actions-startups permanent;
 
-
 #Certbot
 certbot_auto_renew_user: root
 certbot_auto_renew_minute: 20
