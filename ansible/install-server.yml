@@ -26,7 +26,7 @@
 
     - name: Test secure connection to SSL domain.
       uri:
-        url: https://dinsic:supersecure@test-dinsic.fr
+        url: https://devdinsic:supersecure@dev.numerique.gouv.fr
         status_code: 200
       delegate_to: localhost
       become: no
